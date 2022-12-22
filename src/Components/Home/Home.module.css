@@ -1,0 +1,12 @@
+
+.first_box{
+background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/c21f79a478a4bc4c7b07e2a099dd139cbb898b43-2880x1040.jpg?w=1440&q=75&auto=format');
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.second_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/d70febb429a447377c6693bf505fcff6e3ad32e4-1440x500.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
