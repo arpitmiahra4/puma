@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { dataUrl } from "../../URL/AllUrl";
 import styles from "./Carousel.module.css";
 const responsive = {
   superLargeDesktop: {
@@ -26,48 +25,44 @@ const responsive = {
 };
 
 const Carousel1 = () => {
-    const [top,setTop] =useState([])
-    axios.get(`${dataUrl}/products/trending`,{withCredentials:true}).then((res)=>setTop(res.data)).catch((err)=>console.log(err.message));
+  const [top, setTop] = useState([]);
+  axios(`${process.env.REACT_APP_DATA_URL}/products/trending`)
+    .then((res) => setTop(res.data))
+    .catch((err) => console.log(err.message));
   return (
     <Box className={styles.sb_main}>
       <Carousel responsive={responsive}>
-      {top && top.map((el,i)=>(
-        <Box h="430px" w="360px"  key={i}>
-          <Image
-            src={el.image}
-            alt="error"
-            w={600}
-          />
-          <Box
-            style={{
-              backgroundColor: "white",
-              height: "40px",
-              display:"flex"
-            }}
-          >
-            <Text
-              bg={"whiteAlpha.100"}
-              style={{ color: "#000000" }}
-              fontSize="17px"
-              fontWeight="bold"
-            >
-              {el.title}
-            </Text>
-            <Text
-              bg={"whiteAlpha.100"}
-              style={{ color: "#000000" }}
-            >
-              {el.price}
-            </Text>
-            <Text
-              bg={"whiteAlpha.100"}
-              style={{ color: "#000000", textDecoration:"line-through"}}
-            >
-              {el.cutted}
-            </Text>
-          </Box>
-        </Box>
-        ))}
+        {top &&
+          top.map((el, i) => (
+            <Box h="430px" w="360px" key={i}>
+              <Image src={el.images[0].image} alt="error" w={600} />
+              <Box
+                style={{
+                  backgroundColor: "white",
+                  height: "40px",
+                  display: "flex",
+                }}
+              >
+                <Text
+                  bg={"whiteAlpha.100"}
+                  style={{ color: "#000000" }}
+                  fontSize="17px"
+                  fontWeight="bold"
+                >
+                  {el.title}
+                </Text>
+                <Text bg={"whiteAlpha.100"} style={{ color: "#000000" }}>
+                  {el.price}
+                </Text>
+                <Text
+                  bg={"whiteAlpha.100"}
+                  style={{ color: "#000000", textDecoration: "line-through" }}
+                >
+                  {el.cutted}
+                </Text>
+              </Box>
+            </Box>
+          ))}
       </Carousel>
     </Box>
   );
