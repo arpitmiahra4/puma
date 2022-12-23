@@ -10,3 +10,43 @@ background-size: cover;
     background-repeat: no-repeat;
     background-size: cover; 
 }
+.third_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/5dc31778d5c10099c7817d2325eeb845b2ee2f7b-2880x1040.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.forth_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/cc2f65b299646c2821ce5fdbe25b4bfd9827e08b-1440x516.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.five_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/a7fb8374ad8465a1a7bce8aed3cfb6de90d4942b-1440x500.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+.six_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/02c4327ba32f46098c06e1d4e90e5effcf799d13-2880x1020.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+.seven_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/c16d8c52c4451feefbd9251edf3652e15f3ee238-1440x500.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+.eight_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/53128815c171678bcb1ea1746ca0258594e0ab06-1440x557.webp?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.nine_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/526ff167431b48b1ba4e70ee2763f22aba52f409-1440x519.webp?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.ten_box{
+    background-image: url('https://cdn.sanity.io/images/qa41whrn/prod/0f016bf576526e184f19dc117da0f6cdfa0de3b5-1440x500.jpg?w=1440&q=75&auto=format');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}

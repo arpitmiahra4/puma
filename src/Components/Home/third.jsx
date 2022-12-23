@@ -25,9 +25,9 @@ const responsive = {
   },
 };
 
-const Carousel1 = () => {
+const Carousel3 = () => {
   const [top, setTop] = useState([]);
-  axios(`${dataUrl}/products/trending`)
+  axios(`${dataUrl}/products?category=women`)
     .then((res) => setTop(res.data))
     .catch((err) => console.log(err.message));
   return (
@@ -72,4 +72,4 @@ const Carousel1 = () => {
   );
 };
 
-export default Carousel1;
+export default Carousel3;

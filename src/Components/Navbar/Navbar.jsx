@@ -15,10 +15,8 @@ import {
   useDisclosure,
   Img,
   Menu,
-  MenuButton,
-  Avatar,
+  MenuButton, 
   MenuList,
-  Center,
   MenuDivider,
   MenuItem,
 } from "@chakra-ui/react";
@@ -157,7 +155,7 @@ const DesktopNav = () => {
                 boxShadow={"xl"}
                 p={4}
                 rounded={"none"}
-                w="100vw"
+                // w="80vw"
               >
                 <Stack>
                   {navItem.children.map((child) => (
