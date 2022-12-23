@@ -35,14 +35,28 @@ const Carousel1 = () => {
       <Carousel responsive={responsive}>
         {top &&
           top.map((el, i) => (
-            <Box className={styles.top_main} h="400px" w="350px" borderRadius={10} mb="5px" ml={5} key={i}>
-              <Image  borderRadius={10} src={el.images[0].image} alt="error" w={500} h="350" />
+            <Box
+              className={styles.top_main}
+              h="400px"
+              w="350px"
+              borderRadius={10}
+              mb="5px"
+              ml={5}
+              key={i}
+            >
+              <Image
+                borderRadius={10}
+                src={el.images[0].image}
+                alt="error"
+                w={500}
+                h="350"
+              />
               <Box
                 style={{
                   backgroundColor: "white",
                   height: "40px",
                   display: "flex",
-                  justifyContent:"space-between"
+                  justifyContent: "space-between",
                 }}
               >
                 <Text
@@ -54,15 +68,15 @@ const Carousel1 = () => {
                   {el.title}
                 </Text>
                 <Box h="50px">
-                <Text bg={"whiteAlpha.100"} style={{ color: "#ba2b25" }}>
-                  {el.price}
-                </Text>
-                <Text
-                  bg={"whiteAlpha.100"}
-                  style={{ color: "gray", textDecoration: "line-through" }}
-                >
-                  {el.actual_price}
-                </Text>
+                  <Text bg={"whiteAlpha.100"} style={{ color: "#ba2b25" }}>
+                    {el.price}
+                  </Text>
+                  <Text
+                    bg={"whiteAlpha.100"}
+                    style={{ color: "gray", textDecoration: "line-through" }}
+                  >
+                    {el.actual_price}
+                  </Text>
                 </Box>
               </Box>
             </Box>
