@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const NewArrivals = () => {
-  return (
-    <div>NewArrivals</div>
-  )
-}
+  return <div>NewArrivals</div>;
+};
 
-export default NewArrivals
+export default NewArrivals;

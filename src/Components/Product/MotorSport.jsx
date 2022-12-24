@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const MotorSport = () => {
-  return (
-    <div>MotorSport</div>
-  )
-}
+  return <div>MotorSport</div>;
+};
 
-export default MotorSport
+export default MotorSport;

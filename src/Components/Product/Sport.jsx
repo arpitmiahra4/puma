@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Sport = () => {
-  return (
-    <div>Sport</div>
-  )
-}
+  return <div>Sport</div>;
+};
 
-export default Sport
+export default Sport;

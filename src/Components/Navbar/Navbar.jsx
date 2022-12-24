@@ -15,7 +15,7 @@ import {
   useDisclosure,
   Img,
   Menu,
-  MenuButton, 
+  MenuButton,
   MenuList,
   MenuDivider,
   MenuItem,
@@ -271,6 +271,7 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "New Arrivals",
+    href: "/new-arrivals",
     children: [
       {
         label: "Explore Design Work",
@@ -284,6 +285,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Women",
+    href: "/women",
     children: [
       {
         label: "Job Board",
@@ -298,6 +300,7 @@ const NAV_ITEMS = [
 
   {
     label: "Men",
+    href: "/men",
     children: [
       {
         label: "Job Board",
@@ -311,6 +314,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Kids",
+    href: "/kids",
     children: [
       {
         label: "Job Board",
@@ -324,6 +328,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Collaborations",
+    href: "/collaborations",
     children: [
       {
         label: "Job Board",
@@ -337,6 +342,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Sport",
+    href: "/sport",
     children: [
       {
         label: "Job Board",
@@ -350,6 +356,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Motorsport",
+    href: "motorsport",
     children: [
       {
         label: "Job Board",
@@ -363,6 +370,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Outlet",
+    href: "/outlet",
     children: [
       {
         label: "Job Board",

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Collaborations = () => {
-  return (
-    <div>Collaborations</div>
-  )
-}
+  return <div>Collaborations</div>;
+};
 
-export default Collaborations
+export default Collaborations;
