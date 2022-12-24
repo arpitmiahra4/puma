@@ -9,12 +9,12 @@ import "./women.css";
 const Mens = () => {
   const [men, setMen] = useState([]);
   useEffect(() => {
-    axios(`${dataUrl}/products?category=men`)
+    axios(`${dataUrl}/products?category=mens`)
       .then((res) => setMen(res.data))
       .catch((err) => console.log(err.message));
   });
   return (
-    <Box border={"3px solid blue"} mt={2}>
+    <Box mt={2}>
       <Text fontWeight={"bold"}>Home 🔹 Mens</Text>
       <Box border="2px solid red" mt={5}>
         <Text fontWeight={"bolder"} fontSize={35}>

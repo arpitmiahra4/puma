@@ -14,7 +14,7 @@ const Kids = () => {
       .catch((err) => console.log(err.message));
   });
   return (
-    <Box border={"3px solid blue"} mt={2}>
+    <Box mt={2}>
       <Text fontWeight={"bold"}>Home 🔹 kids</Text>
       <Box border="2px solid red" mt={5}>
         <Text fontWeight={"bolder"} fontSize={35}>
