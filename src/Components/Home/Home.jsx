@@ -12,7 +12,7 @@ const Home = () => {
         w={["50%", "80%", "100%", null, null]}
         h={530}
       >
-        <Box w={540} ml="900px" pt={200} h={500}>
+        <Box w={"40%"} ml="55%" pt={"10%"} h={500}>
           <Text fontWeight={"bolder"} fontSize={40} color={"white"}>
             NEW CAT IN THE JUNGLE
           </Text>
@@ -30,7 +30,7 @@ const Home = () => {
         w={["50%", "80%", "100%", null, null]}
         h={520}
       >
-        <Box pt={150} pl={1020}>
+        <Box pt={"10%"} pl={"60%"}>
           <Text fontWeight={"bolder"} fontSize={55} color={"white"}>
             THE SEASON
           </Text>
@@ -57,7 +57,7 @@ const Home = () => {
             type="video/mp4"
           />
         </video>
-        <Box w={300} mt="-200px" h={200} ml={1200}>
+        <Box w={"30%"} mt="-200px" h={200} ml={"60%"}>
           <Text color={"white"} fontWeight={"bolder"} fontSize={40}>
             GET YOUR
           </Text>
@@ -114,7 +114,7 @@ const Home = () => {
         h={530}
         pt={"100px"}
       >
-        <Box w={400} h={220} ml={1100}>
+        <Box w={"30%"} h={220} ml={"65%"}>
           <Text fontWeight={"bolder"} fontSize={50} color={"black"}>
             FIRST TIME
           </Text>
@@ -142,7 +142,7 @@ const Home = () => {
         h={530}
         pt={"200px"}
       >
-        <Box w={500} h={220} ml={1000}>
+        <Box w={"32%"} h={220} ml={"65%"}>
           <Text fontWeight={"bolder"} fontSize={45} color={"white"}>
             FOREVER ICONIC
           </Text>
@@ -192,7 +192,7 @@ const Home = () => {
         h={530}
         pt={"200px"}
       >
-        <Box w={500} h={220} ml={1000}>
+        <Box w={"30%"} h={220} ml={"60%"}>
           <Text fontWeight={"bolder"} fontSize={55} color={"black"}>
             WALK IT OFF
           </Text>
@@ -211,7 +211,7 @@ const Home = () => {
         h={530}
         pt={"190px"}
       >
-        <Box w={600} h={220} ml={470}>
+        <Box w={"40%"} h={220} ml={"35%"}>
           <Text fontWeight={"bolder"} fontSize={48} color={"white"}>
             PUMA x PERKS AND MINI
           </Text>
@@ -230,7 +230,7 @@ const Home = () => {
         h={520}
         mb={10}
       >
-        <Box pt={150} pl={800}>
+        <Box pt={"10%"} pl={"50%"}>
           <Text fontWeight={"bolder"} fontSize={45} color={"black"}>
             THERMAL WEAR BY PUMA
           </Text>

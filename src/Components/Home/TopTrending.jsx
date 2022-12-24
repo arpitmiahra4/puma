@@ -7,7 +7,6 @@ import { dataUrl } from "../../URL/AllUrl";
 import styles from "./Carousel.module.css";
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -16,7 +15,7 @@ const responsive = {
     items: 4,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
+    breakpoint: { max: 1023, min: 464 },
     items: 2,
   },
   mobile: {
@@ -32,7 +31,7 @@ const Carousel1 = () => {
     .catch((err) => console.log(err.message));
   return (
     <Box className={styles.sb_main}>
-      <Carousel responsive={responsive}>
+      <Carousel ssr={true} responsive={responsive}>
         {top &&
           top.map((el, i) => (
             <Box
