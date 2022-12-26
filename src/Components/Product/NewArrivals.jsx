@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BiGridAlt } from "react-icons/bi";
 import { TfiLayoutGrid4 } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 import { dataUrl } from "../../URL/AllUrl";
 import MetaData from "../Home/MetaData";
 
@@ -51,7 +52,7 @@ const NewArrivals = () => {
       </Box>
       <Box className={names} pr={10} pl={2}>
       {newa && newa.map((el,i)=>(
-        <Box
+        <Link to={`/singleproduct/${el._id}`}><Box
               mt={10}
               mb="5px"
               ml={5}
@@ -92,6 +93,7 @@ const NewArrivals = () => {
                 </Box>
               </Box>
             </Box>
+            </Link>
       ))}
 
       </Box>

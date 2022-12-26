@@ -3,13 +3,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { BiHeart, BiRevision } from 'react-icons/bi';
 import { useParams } from 'react-router-dom'
+import { dataUrl } from '../../URL/AllUrl';
 import "./women.css"
 const SingleProduct = () => {
     const params = useParams();
-    console.log(params);
     const [data , setData] = useState([]);
+    const id = params.id
     useEffect(()=>{
-      axios(`https://mock-server-686g.onrender.com/single`)
+      axios(`${dataUrl}/products/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err.message));
     })
@@ -17,20 +18,16 @@ const SingleProduct = () => {
     <Box w={"100%"} pl={5} pr={5} >
       <Text>Home 🔹 Women</Text>
       {data && data.map((el,i)=>(
-        <Flex key={i} w={"100%"} >
+        <Flex key={i} w={"100%"} mt={"5%"}>
       <Box w={"70%"}>
         <Image src={el.images[0].image} w={"100%"}/>
-        <Box className='grid_images'>
-            <Image src={el.images[1].image} h={"98%"}/>
-            <Image src={el.images[2].image} h={"98%"}/>
-            <Image src={el.images[3].image} h={"98%"}/>
-            <Image src={el.images[4].image} h={"98%"}/>
-            <Image src={el.images[5].image} h={"98%"}/>
-            <Image src={el.images[6].image} h={"98%"}/>
-            <Image src={el.images[7].image} h={"98%"}/>
+        <Box className='grid_images' mt={2} w={"100%"}>
+        {el.images && el.images.map((item,i)=>(
+            <Image src={item.image} key={i} h={"100%"}/>
+        ))}
         </Box>
       </Box>
-      <Box w={"40%"} mt={"5%"}>
+      <Box w={"40%"} pl="2%">
       <Text fontWeight={"bolder"} fontSize={35}>{el.title}</Text>
       <Text color={"#ba2b25"} mt="5" fontWeight={"bolder"} fontSize={27}>{`₹${el.price}`}</Text>
       <Text fontWeight={"bolder"} style={{textDecoration: "line-through"}} fontSize={16}>{`₹${el.actual_price}`}</Text>
@@ -41,11 +38,12 @@ const SingleProduct = () => {
       <Divider/>
       <hr />
       <Text fontWeight={"bold"} mt={"5%"}fontSize={20}>Size</Text>
-      <Flex gap={2} textAlign="center" >
-      <Box border={"2px solid gray"} pt={"2%"} w={"8%"} h={12}>{el.sizes[0].size}</Box>
-      <Box border={"2px solid gray"} pt={"2%"} w={"8%"} h={12}>{el.sizes[1].size}</Box>
-      <Box border={"2px solid gray"} pt={"2%"} w={"8%"} h={12}>{el.sizes[2].size}</Box>
-      </Flex>
+      <Box display={"flex"} gap={2} textAlign="center">
+      {el.sizes && el.sizes.map((item,i)=>(
+      <Box key={i} border={"2px solid gray"} pt={"2.5%"} w={"11%"} h={14}>{item.size}</Box>
+      ))}
+      </Box>
+      
       </Box>
       <Divider/>
       <hr />
