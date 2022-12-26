@@ -1,0 +1,18 @@
+.first_box {
+    background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/31f2cba5c75536cb8e6959c6b6f1f35b4abda239-1440x520.jpg?w=1440&q=75&auto=format");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .second_box {
+    background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/cf8a9c4ce55b7782a1bf4888b73a6f3482e0ee49-1440x500.jpg?w=1440&q=75&auto=format");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .third_box {
+    background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/f90a9b7fcc90bc010875fc95bba53157afddad87-1440x519.jpg?w=1440&q=75&auto=format");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }

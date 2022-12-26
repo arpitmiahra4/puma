@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { BiGridAlt } from "react-icons/bi";
 import { TfiLayoutGrid4 } from "react-icons/tfi";
 import { dataUrl } from "../../URL/AllUrl";
+import MetaData from "../Home/MetaData";
 import "./women.css"
 const Women = () => {
   const [women , setWomen] = useState([]);
@@ -13,7 +14,17 @@ const Women = () => {
     .then((res) => setWomen(res.data))
     .catch((err) => console.log(err.message));
   })
+  const [names , setNames] = useState("women_main");
+  const handleChange = () =>{
+    console.log("hello");
+    setNames("women_two")
+  }
+  const handleFour = () =>{
+    setNames("women_main")
+  }
   return (
+    <>
+    <MetaData title="Women's Shoes, Clothing & Accessories - PUMA India"/>
     <Box mt={2}>
       <Text fontWeight={"bold"}>Home 🔹 Women</Text>
       <Box  border="2px solid red" mt={5}>
@@ -32,19 +43,17 @@ const Women = () => {
       </Box>
       {/* Product Section */}
       <Box>
-      <Box pr={10} pl={10} display={"flex"} alignItems="center" fontWeight={"bold"} justifyContent="space-between">
+      <Box pr={10} pl={10} display={"flex"} alignItems="center"  fontWeight={"bold"} justifyContent="space-between">
         <Text fontSize={22}>Count PRODUCTS</Text>
         <Box gap={5} display={"flex"}>
-          <BiGridAlt size={30}/>
-          <TfiLayoutGrid4 size={28}/>
+          <BiGridAlt onClick={handleChange} size={30}/>
+          <TfiLayoutGrid4 onClick={handleFour} size={28}/>
         </Box>
       </Box>
-      <Box className="women_main" pr={10} pl={2}>
+      <Box className={names} pr={10} pl={2}>
       {women && women.map((el,i)=>(
         <Box
               mt={10}
-              h="400px"
-              w="350px"
               mb="5px"
               ml={5}
               key={i}
@@ -52,7 +61,7 @@ const Women = () => {
               <Image
                 src={el.image}
                 alt="error"
-                w={500}
+                w={"100%"}
                 h="350"
               />
               <Box
@@ -89,6 +98,7 @@ const Women = () => {
       </Box>
       </Box>
     </Box>
+    </>
   );
 };
 
