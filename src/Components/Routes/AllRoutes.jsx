@@ -10,6 +10,7 @@ import Sport from "../Product/Sport";
 import Outlet from "../Product/Outlet";
 import MotorSport from "../Product/MotorSport";
 import Collaborations from "../Product/Collaborations";
+import SingleProduct from "../Product/SingleProduct";
 
 const AllRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const AllRoutes = () => {
       <Route path="/outlet" element={<Outlet />} />
       <Route path="/collaborations" element={<Collaborations />} />
       <Route path="/motorsport" element={<MotorSport />} />
+      <Route path="/singleproduct/:id" element={<SingleProduct />}/>
     </Routes>
   );
 };
