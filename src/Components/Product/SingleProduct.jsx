@@ -81,7 +81,7 @@ const SingleProduct = () => {
           </Box>
         </Flex>
       ))}
-      <Box bg="#f3f3f3" mb={10} mt={10} p={[10, 10, 10, 10]}>
+      <Box bg="#f3f3f3" mb={10} mt={60} p={[10, 10, 10, 10]}>
         <Text fontWeight={"bold"} fontSize={22}>PRODUCT STORY</Text>
         <Text mt={2}>Comfort is the name of the game with these stylish running shoes. Lightweight and well-cushioned, they're the perfect training companion.</Text>
         <Flex w={"80%"} mt={10}>
