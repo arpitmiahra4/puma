@@ -14,7 +14,7 @@ const SingleProduct = () => {
     axios(`${dataUrl}/products/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err.message));
-  })
+  },[id])
   return (
     <Box w={"100%"} pl={5} pr={5} >
       <Text>Home 🔹 Women</Text>
