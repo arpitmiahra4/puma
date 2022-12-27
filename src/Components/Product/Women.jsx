@@ -8,7 +8,6 @@ import {
   Image,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
   Select,

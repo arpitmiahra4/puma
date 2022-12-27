@@ -11,10 +11,6 @@ function App() {
 
       <Navbar />
       <AllRoutes />
-<<<<<<< HEAD
-
-=======
->>>>>>> c7dd2cac901071fad19f86354d4d466adca9c2a9
       <Footer />
     </>
   );
