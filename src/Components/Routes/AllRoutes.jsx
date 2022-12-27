@@ -25,8 +25,8 @@ const AllRoutes = () => {
       <Route path="/outlet" element={<Outlet />} />
       <Route path="/collaborations" element={<Collaborations />} />
       <Route path="/motorsport" element={<MotorSport />} />
-      <Route path="/products/:id" element={<SingleProduct />} />
       <Route path="/auth" element={<AuthPage />} />
+      <Route path="/singleproduct/:id" element={<SingleProduct />} />
     </Routes>
   );
 };
