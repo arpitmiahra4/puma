@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -14,11 +13,6 @@ import {
   useColorModeValue,
   useDisclosure,
   Img,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuDivider,
-  MenuItem,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -26,7 +20,8 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { FaRegUser } from "react-icons/fa";
+
+import UserMenu from "../Login/UserMenu";
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -73,50 +68,7 @@ export const Navbar = () => {
           direction={"row"}
           spacing={6}
         >
-          <Menu>
-            <MenuButton
-              as={Button}
-              rounded={"full"}
-              variant={"link"}
-              cursor={"pointer"}
-              minW={0}
-              color="white"
-            >
-              <FaRegUser />
-            </MenuButton>
-            <MenuList alignItems={"center"} color="black" p={5}>
-              <MenuItem>My Account</MenuItem>
-              <MenuDivider />
-              <MenuItem>Wishlist</MenuItem>
-              <MenuDivider />
-              <MenuItem>Check Order/Initiate Return</MenuItem>
-              <MenuDivider />
-              <MenuItem>Store Finder</MenuItem>
-              <MenuDivider />
-              <MenuItem>Language</MenuItem>
-              <Button
-                textTransform={"uppercase"}
-                w="100%"
-                rounded="none"
-                mb={2}
-                color="white"
-                bgColor="#8a7350"
-                _hover={{ bgColor: "#8a7350" }}
-              >
-                Login
-              </Button>
-              <Button
-                textTransform={"uppercase"}
-                _hover={{ bgColor: "#999999" }}
-                color="white"
-                w="100%"
-                rounded="none"
-                bgColor={"#999999"}
-              >
-                Register Here
-              </Button>
-            </MenuList>
-          </Menu>
+          <UserMenu />
         </Stack>
       </Flex>
 
