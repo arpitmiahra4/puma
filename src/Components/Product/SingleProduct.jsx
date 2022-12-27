@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   Box,
   Button,
@@ -19,12 +20,28 @@ const SingleProduct = () => {
   console.log(data);
   useEffect(() => {
     axios(`https://puma-backend.onrender.com/products/${params.id}`)
+=======
+import { Box, Button, Divider, Flex, Image, Input, Text } from '@chakra-ui/react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { BiHeart, BiRevision } from 'react-icons/bi';
+import { useParams } from 'react-router-dom'
+import { dataUrl } from '../../URL/AllUrl';
+import "./women.css"
+const SingleProduct = () => {
+    const params = useParams();
+    const [data , setData] = useState([]);
+    const id = params.id
+    useEffect(()=>{
+      axios(`${dataUrl}/products/${id}`)
+>>>>>>> c7dd2cac901071fad19f86354d4d466adca9c2a9
       .then((res) => setData(res.data))
       .catch((err) => console.log(err.message));
   });
   return (
     <Box w={"100%"} pl={5} pr={5}>
       <Text>Home 🔹 Women</Text>
+<<<<<<< HEAD
       {data &&
         data.map((el, i) => (
           <Flex key={i} w={"100%"}>
@@ -234,6 +251,54 @@ const SingleProduct = () => {
               41517 Thanh Hoa
             </Text>
           </Box>
+=======
+      {data && data.map((el,i)=>(
+        <Flex key={i} w={"100%"} mt={"5%"}>
+      <Box w={"70%"}>
+        <Image src={el.images[0].image} w={"100%"}/>
+        <Box className='grid_images' mt={2} w={"100%"}>
+        {el.images && el.images.map((item,i)=>(
+            <Image src={item.image} key={i} h={"100%"}/>
+        ))}
+        </Box>
+      </Box>
+      <Box w={"40%"} pl="2%">
+      <Text fontWeight={"bolder"} fontSize={35}>{el.title}</Text>
+      <Text color={"#ba2b25"} mt="5" fontWeight={"bolder"} fontSize={27}>{`₹${el.price}`}</Text>
+      <Text fontWeight={"bolder"} style={{textDecoration: "line-through"}} fontSize={16}>{`₹${el.actual_price}`}</Text>
+      <Box mb={5}>
+      <Text fontWeight={"bold"} mt={"5%"} fontSize={20}>Color</Text>
+      <Text>Puma Black-Puma White</Text>
+      <Image src='https://i.ibb.co/z5F6DPR/Screenshot-20221226-191032.png' w={"40%"}/>
+      <Divider/>
+      <hr />
+      <Text fontWeight={"bold"} mt={"5%"}fontSize={20}>Size</Text>
+      <Box display={"flex"} gap={2} textAlign="center">
+      {el.sizes && el.sizes.map((item,i)=>(
+      <Box key={i} border={"2px solid gray"} pt={"2.5%"} w={"11%"} h={14}>{item.size}</Box>
+      ))}
+      </Box>
+      
+      </Box>
+      <Divider/>
+      <hr />
+      <Box mt={"5%"} ml={"20%"}>
+      <Button w={"90%"}  h="60px" bg="black" color={"white"} fontWeight="bold" fontSize={20}>ADD TO CART</Button>
+      <Button w={"90%"} mt={4} border="2px solid black" h="60px" bg="white" color={"black"} fontWeight="bold" fontSize={20}><BiHeart size={40} /> ADD TO WISHLIST</Button>
+      </Box>
+      <Box mt={"5%"} mb={"5%"}>
+      <Text display={"flex"} color="gray" fontSize={18} alignItems={"center"} gap={2}><BiRevision size={"4%"}/>FREE RETURNS ON ALL QUALIFYING ORDERS.</Text>
+      </Box>
+      <Divider/>
+      <hr />
+      <Box mt={"5%"}>
+        <Text color="gray" fontSize={16}>Please enter PIN code to check delivery time</Text>
+        <Box mt={"3%"}>
+        <Text fontWeight={"bold"}>PIN CODE</Text>
+        <Flex gap={"5%"}>
+        <Input type="text" placeholder="PIN code" fontSize={20} w={"60%"} h="60PX"/>
+        <Button bg={"BLACK"} color="white" w={"35%"} h="60PX">CHECK</Button>
+>>>>>>> c7dd2cac901071fad19f86354d4d466adca9c2a9
         </Flex>
         <Text fontWeight={"bold"} fontSize={22}>
           Country Of Origin

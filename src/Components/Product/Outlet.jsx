@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 // import { Select } from '@chakra-ui/react'
 import { BiGridAlt } from "react-icons/bi";
 import { TfiLayoutGrid4 } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 import { dataUrl } from "../../URL/AllUrl";
 import MetaData from "../Home/MetaData";
 import "./women.css"
@@ -52,7 +53,7 @@ const Outlet = () => {
       </Box>
       <Box className={names} pr={10} pl={2}>
       {outlet && outlet.map((el,i)=>(
-        <Box
+        <Link to={`/singleproduct/${el._id}`}><Box
               mt={10}
               mb="5px"
               ml={5}
@@ -93,6 +94,7 @@ const Outlet = () => {
                 </Box>
               </Box>
             </Box>
+            </Link>
       ))}
 
       </Box>

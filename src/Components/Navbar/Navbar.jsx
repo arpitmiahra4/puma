@@ -51,13 +51,12 @@ export const Navbar = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Box>
+          <Link href="/"><Box>
             <Img
               w="50px"
               src="https://logos-world.net/wp-content/uploads/2020/04/Puma-Logo-1970-1974.png"
             />
-          </Box>
-
+          </Box></Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
