@@ -14,10 +14,10 @@ const Collaborations = () => {
       >
         <Box w={"40%"} ml="65%" pt={"10%"} h={500}>
           <Text fontWeight={"bolder"} fontSize={40} color={"black"}>
-          ART IN ACTION
+            ART IN ACTION
           </Text>
           <Text fontSize={22} color={"black"} mt={"-2"}>
-          PUMA x MAGGIE STEPHENSON
+            PUMA x MAGGIE STEPHENSON
           </Text>
           <Button bg={"black"} fontWeight={"bolder"} color={"white"} mt={5}>
             SHOP NOW
@@ -33,10 +33,10 @@ const Collaborations = () => {
       >
         <Box w={"40%"} pt={"10%"} h={500}>
           <Text fontWeight={"bolder"} fontSize={45} color={"black"}>
-          PUMA x COCA-COLA
+            PUMA x COCA-COLA
           </Text>
           <Text fontSize={25} color={"black"} mt={"-2"}>
-          A SIGN OF GOOD TASTE
+            A SIGN OF GOOD TASTE
           </Text>
           <Button bg={"black"} fontWeight={"bolder"} color={"white"} mt={5}>
             SHOP NOW
@@ -52,7 +52,7 @@ const Collaborations = () => {
       >
         <Box w={"35%"} pl={"5%"} pt={"13%"} h={500}>
           <Text fontWeight={"bolder"} fontSize={50} color={"black"}>
-          PUMA X DUA LIPA
+            PUMA X DUA LIPA
           </Text>
           <Button bg={"black"} fontWeight={"bolder"} color={"white"} mt={5}>
             SHOP NOW
@@ -60,7 +60,7 @@ const Collaborations = () => {
         </Box>
       </Box>
     </>
-  )
+  );
 };
 
 export default Collaborations;
