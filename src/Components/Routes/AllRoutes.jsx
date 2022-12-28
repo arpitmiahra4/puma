@@ -12,6 +12,7 @@ import MotorSport from "../Product/MotorSport";
 import Collaborations from "../Product/Collaborations";
 import SingleProduct from "../Product/SingleProduct";
 import AuthPage from "../Login/AuthPage";
+import EmailPasswordLogin from "../Login/EmailPasswordLogin";
 
 const AllRoutes = () => {
   return (
@@ -26,6 +27,7 @@ const AllRoutes = () => {
       <Route path="/collaborations" element={<Collaborations />} />
       <Route path="/motorsport" element={<MotorSport />} />
       <Route path="/auth" element={<AuthPage />} />
+      <Route path="/email-login" element={<EmailPasswordLogin />} />
       <Route path="/singleproduct/:id" element={<SingleProduct />} />
     </Routes>
   );

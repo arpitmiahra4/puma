@@ -1,7 +1,9 @@
 import { Button, FormControl, FormLabel, Input, Stack, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/ReactToastify.min.css";
 import { registerUser } from "../../Redux/Auth/action";
 
 const RegisterComponent = () => {
@@ -9,14 +11,38 @@ const RegisterComponent = () => {
 
   const dispatch = useDispatch()
 
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   }
   const handleRegister = (e) => {
     e.preventDefault();
-    dispatch(registerUser(user)).then(() => {
-      toast("Wow so easy!");
+    dispatch(registerUser(user, toast, navigate)).then((res) => {
+      if (res.type === "USER_REGISTRATION_FAILURE") {
+        toast.error(res.payload.response.data.msg, {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        })
+      } else {
+        toast.success("You are registered successfully", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        })
+      }
     })
   }
   return (
@@ -52,7 +78,7 @@ const RegisterComponent = () => {
           onClick={handleRegister}
           bg="#bdc1c5" _hover={{ bg: "#bdc1c5" }} w="100%" mt="10px" borderRadius={0}>Register</Button>
       </form>
-      <ToastContainer />
+      <ToastContainer ></ToastContainer>
     </>
   );
 };

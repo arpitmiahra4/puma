@@ -34,7 +34,7 @@ export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box position={"sticky"} top={0} zIndex={5}>
       <Flex
         bg={"#181818"}
         color="white"
@@ -58,12 +58,14 @@ export const Navbar = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Link href="/"><Box>
-            <Img
-              w="50px"
-              src="https://logos-world.net/wp-content/uploads/2020/04/Puma-Logo-1970-1974.png"
-            />
-          </Box></Link>
+          <Link href="/">
+            <Box>
+              <Img
+                w="50px"
+                src="https://logos-world.net/wp-content/uploads/2020/04/Puma-Logo-1970-1974.png"
+              />
+            </Box>
+          </Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -76,8 +78,8 @@ export const Navbar = () => {
             <InputLeftElement children={<SearchIcon color="gray.300" />} />
             <Input focusBorderColor="#bdc1c5" borderColor="#999999" borderRadius={0} placeholder="SEARCH PUMA.COM" />
           </InputGroup>
-          <BiCart size="40px" />
-          <BiHeart size="35px" />
+          <Box cursor={"pointer"}><BiCart size="30px" /></Box>
+          <Box cursor={"pointer"}><BiHeart size="26px" /></Box>
           <UserMenu />
         </HStack>
       </Flex>

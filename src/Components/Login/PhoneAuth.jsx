@@ -9,32 +9,22 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { auth } from "../../firebase/firebase.config";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { verifyOtp, sendOtP } from "../../Redux/Auth/action";
+
 
 const PhoneAuth = () => {
   const [phoneNumber, setPhoneNumber] = useState("+91");
   const [otp, setOTP] = useState("");
   const [sendOtp, setSendOtp] = useState(false);
 
-  const genrateRecaptcha = () => {
-    window.recaptchaVerifier = new RecaptchaVerifier(
-      "recaptcha-container",
-      {
-        size: "invisible",
-        callback: (response) => {
-          // reCAPTCHA solved, allow signInWithPhoneNumber.
-        },
-      },
-      auth
-    );
-  };
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
 
   const handlePhoneNumberChange = (event) => {
-    // console.log(phoneNumber)
-
     setPhoneNumber(event.target.value);
-
   };
 
   const handleOTPChange = (event) => {
@@ -43,37 +33,13 @@ const PhoneAuth = () => {
 
   const sendOTP = () => {
     // send OTP to the provided phone number
-    genrateRecaptcha();
-    let appVerifier = window.recaptchaVerifier;
-    let ph = "+91" + phoneNumber
-    signInWithPhoneNumber(auth, ph, appVerifier)
-      .then((confirmationResult) => {
-        window.confirmationResult = confirmationResult;
-        setSendOtp(true);
-      })
-      .catch((err) => {
-        // setError(err.message);
-        console.log(err);
-      });
+    dispatch(sendOtP(phoneNumber, setSendOtp));
   };
 
-  const verifyOTP = async () => {
+  const verifyOTP = () => {
     // console.log(otp);
     // verify the OTP using the verification id
-    const confirmationResult = window.confirmationResult;
-
-    await confirmationResult
-      .confirm(otp)
-      .then((result) => {
-        console.log(result);
-        // User signed in successfully.
-        const user = result.user;
-        // ...
-      })
-      .catch((error) => {
-        // User couldn't sign in (bad verification code?)
-        // ...
-      });
+    dispatch(verifyOtp(otp, navigate))
   };
 
   return (
