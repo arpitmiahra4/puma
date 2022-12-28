@@ -13,15 +13,22 @@ import {
   useColorModeValue,
   useDisclosure,
   Img,
+  HStack,
+  Input,
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  SearchIcon,
 } from "@chakra-ui/icons";
 
 import UserMenu from "../Login/UserMenu";
+import { BiCart, BiHeart } from "react-icons/bi";
+
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -62,14 +69,17 @@ export const Navbar = () => {
           </Flex>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
+        <HStack
           spacing={6}
         >
+          <InputGroup>
+            <InputLeftElement children={<SearchIcon color="gray.300" />} />
+            <Input focusBorderColor="#bdc1c5" borderColor="#999999" borderRadius={0} placeholder="SEARCH PUMA.COM" />
+          </InputGroup>
+          <BiCart size="40px" />
+          <BiHeart size="35px" />
           <UserMenu />
-        </Stack>
+        </HStack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -106,7 +116,7 @@ const DesktopNav = () => {
                 boxShadow={"xl"}
                 p={4}
                 rounded={"none"}
-                // w="80vw"
+              // w="80vw"
               >
                 <Stack>
                   {navItem.children.map((child) => (

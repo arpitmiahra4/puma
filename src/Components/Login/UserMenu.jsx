@@ -24,7 +24,7 @@ const UserMenu = () => {
         minW={0}
         color="white"
       >
-        <FaRegUser />
+        <FaRegUser size="20px" />
       </MenuButton>
       <MenuList alignItems={"center"} color="black" p={5}>
         <MenuItem>My Account</MenuItem>
