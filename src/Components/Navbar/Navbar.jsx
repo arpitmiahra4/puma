@@ -17,6 +17,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Button,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -26,15 +27,18 @@ import {
   SearchIcon,
 } from "@chakra-ui/icons";
 
+import {Link as Link2} from "react-router-dom"
+
 import UserMenu from "../Login/UserMenu";
 import { BiCart, BiHeart } from "react-icons/bi";
+import { useMedia } from "../../MediaQuery/UseMedia";
 
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box position={"sticky"} top={0} zIndex={5}>
+    <Box w="100%" position={"sticky"} top={0} zIndex={5}>
       <Flex
         bg={"#181818"}
         color="white"
@@ -46,7 +50,7 @@ export const Navbar = () => {
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
+          display={{ base: "flex", lg: "none" }}
         >
           <IconButton
             onClick={onToggle}
@@ -66,13 +70,13 @@ export const Navbar = () => {
               />
             </Box>
           </Link>
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex display={{ base: "none", lg: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
 
         <HStack
-          spacing={6}
+          spacing={["1%","2%","3%",null,null]}
         >
           <InputGroup>
             <InputLeftElement children={<SearchIcon color="gray.300" />} />
@@ -165,15 +169,17 @@ const DesktopSubNav = ({ label, href }) => {
 };
 
 const MobileNav = () => {
+  const {smallScreen} = useMedia()
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
-      display={{ md: "none" }}
+      display={{ lg: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      {!smallScreen && <> <Link2 to={"/"} ><Button colorScheme='purple'>Homepage </Button> </Link2> </>}
     </Stack>
   );
 };
@@ -233,7 +239,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "New Arrivals",
+    label: "New_Arrivals",
     href: "/new-arrivals",
     children: [
       {
