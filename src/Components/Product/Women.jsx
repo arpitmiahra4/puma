@@ -12,6 +12,7 @@ import {
   MenuList,
   Select,
   SimpleGrid,
+  Spacer,
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -21,12 +22,13 @@ import React, { useEffect, useState } from "react";
 import { BiGridAlt } from "react-icons/bi";
 import { TfiLayoutGrid4 } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { useMedia } from "../../MediaQuery/UseMedia";
 import { dataUrl } from "../../URL/AllUrl";
 import MetaData from "../Home/MetaData";
 import "./women.css";
 const Women = () => {
-  const [arpit ] = useMediaQuery('(min-width: 800px)');
-  console.log(arpit);
+  const {mediumScreen} = useMedia()
+  console.log(mediumScreen);
   console.log(window.innerWidth);
   const [women, setWomen] = useState([]);
   useEffect(() => {
@@ -54,7 +56,7 @@ const Women = () => {
           </Text>
           <Divider />
           <hr />
-        { arpit &&  <Flex
+        { mediumScreen &&  <Flex
             gap={2}
             borderTop="2px solid black"
             borderBottom="2px solid black"
@@ -65,6 +67,7 @@ const Women = () => {
             pb={2}
             pr={2}
           >
+            <Flex gap={2}>
             <Box>
               <Menu closeOnSelect={false}>
                 <MenuButton
@@ -380,7 +383,9 @@ const Women = () => {
                 </MenuList>
               </Menu>
             </Box>
-            <Box ml={"30%"}>
+            </Flex>
+            <Spacer/>
+            <Box >
               <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
                 <option value="option1">Discount High To Low</option>
                 <option value="option2">Best Matches</option>
@@ -390,11 +395,122 @@ const Women = () => {
                 <option value="option3">Newest</option>
               </Select>
             </Box>
-          </Flex> }
-          {!arpit && <Flex gap={"2%"}>
-            <h1>hello</h1>
-            <h1>hello</h1>
-            <h1>hello</h1>
+          </Flex> }    
+          {!mediumScreen &&<Flex
+            gap={2}
+            borderTop="2px solid black"
+            borderBottom="2px solid black"
+            mt={5}
+            mb={5}
+            pl={2}
+            pt={2}
+            pb={2}
+            pr={2}
+          >
+            <Flex gap={2}>
+            <Box>
+              <Menu closeOnSelect={false}>
+                <MenuButton
+                  as={Button}
+                  border={"2px solid black"}
+                  bg="transparent"
+                  _hover={{ backGround: "transparent" }}
+                  fontWeight={"bold"}
+                  fontSize={16}
+                  rightIcon={<TriangleDownIcon />}
+                >
+                  Price
+                </MenuButton>
+                <MenuList>
+                  <CloseIcon
+                    ml={"85%"}
+                    border="2px solid gray"
+                    w={"10%"}
+                    p={0.5}
+                    h="20px"
+                  />
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Footwear [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Apparel [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Accessories [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+            <Box>
+              <Menu closeOnSelect={false}>
+                <MenuButton
+                  as={Button}
+                  border={"2px solid black"}
+                  bg="transparent"
+                  _hover={{ backGround: "transparent" }}
+                  fontWeight={"bold"}
+                  fontSize={16}
+                  rightIcon={<TriangleDownIcon />}
+                >
+                  Size
+                </MenuButton>
+                <MenuList>
+                  <CloseIcon
+                    ml={"85%"}
+                    border="2px solid gray"
+                    w={"10%"}
+                    p={0.5}
+                    h="20px"
+                  />
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Footwear [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Apparel [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Accessories [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+            </Flex>
+            <Spacer/>
+            <Box >
+              <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
+                <option value="option1">Discount High To Low</option>
+                <option value="option2">Best Matches</option>
+                <option value="option3">Top sellers</option>
+                <option value="option2">Price Low To High</option>
+                <option value="option1">Price High To Low</option>
+                <option value="option3">Newest</option>
+              </Select>
+            </Box>
+
             </Flex>}
           <Divider />
           <hr />

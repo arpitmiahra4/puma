@@ -12,6 +12,8 @@ import {
   MenuList,
   Select,
   Text,
+  Spacer,
+  SimpleGrid
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -19,11 +21,13 @@ import React, { useEffect, useState } from "react";
 import { BiGridAlt } from "react-icons/bi";
 import { TfiLayoutGrid4 } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { useMedia } from "../../MediaQuery/UseMedia";
 import { dataUrl } from "../../URL/AllUrl";
 import MetaData from "../Home/MetaData";
 import "./women.css";
 
 const Kids = () => {
+  const {mediumScreen} = useMedia()
   const [kids, setKids] = useState([]);
 
   useEffect(() => {
@@ -50,7 +54,7 @@ const Kids = () => {
           </Text>
           <Divider />
           <hr />
-          <Flex
+          { mediumScreen &&  <Flex
             gap={2}
             borderTop="2px solid black"
             borderBottom="2px solid black"
@@ -61,6 +65,7 @@ const Kids = () => {
             pb={2}
             pr={2}
           >
+            <Flex gap={2}>
             <Box>
               <Menu closeOnSelect={false}>
                 <MenuButton
@@ -376,7 +381,9 @@ const Kids = () => {
                 </MenuList>
               </Menu>
             </Box>
-            <Box ml={"30%"}>
+            </Flex>
+            <Spacer/>
+            <Box >
               <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
                 <option value="option1">Discount High To Low</option>
                 <option value="option2">Best Matches</option>
@@ -386,7 +393,123 @@ const Kids = () => {
                 <option value="option3">Newest</option>
               </Select>
             </Box>
-          </Flex>
+          </Flex> }    
+          {!mediumScreen &&<Flex
+            gap={2}
+            borderTop="2px solid black"
+            borderBottom="2px solid black"
+            mt={5}
+            mb={5}
+            pl={2}
+            pt={2}
+            pb={2}
+            pr={2}
+          >
+            <Flex gap={2}>
+            <Box>
+              <Menu closeOnSelect={false}>
+                <MenuButton
+                  as={Button}
+                  border={"2px solid black"}
+                  bg="transparent"
+                  _hover={{ backGround: "transparent" }}
+                  fontWeight={"bold"}
+                  fontSize={16}
+                  rightIcon={<TriangleDownIcon />}
+                >
+                  Price
+                </MenuButton>
+                <MenuList>
+                  <CloseIcon
+                    ml={"85%"}
+                    border="2px solid gray"
+                    w={"10%"}
+                    p={0.5}
+                    h="20px"
+                  />
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Footwear [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Apparel [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Accessories [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+            <Box>
+              <Menu closeOnSelect={false}>
+                <MenuButton
+                  as={Button}
+                  border={"2px solid black"}
+                  bg="transparent"
+                  _hover={{ backGround: "transparent" }}
+                  fontWeight={"bold"}
+                  fontSize={16}
+                  rightIcon={<TriangleDownIcon />}
+                >
+                  Size
+                </MenuButton>
+                <MenuList>
+                  <CloseIcon
+                    ml={"85%"}
+                    border="2px solid gray"
+                    w={"10%"}
+                    p={0.5}
+                    h="20px"
+                  />
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Footwear [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Apparel [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Accessories [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+            </Flex>
+            <Spacer/>
+            <Box >
+              <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
+                <option value="option1">Discount High To Low</option>
+                <option value="option2">Best Matches</option>
+                <option value="option3">Top sellers</option>
+                <option value="option2">Price Low To High</option>
+                <option value="option1">Price High To Low</option>
+                <option value="option3">Newest</option>
+              </Select>
+            </Box>
+
+            </Flex>}
           <Divider />
           <hr />
         </Box>
@@ -406,7 +529,7 @@ const Kids = () => {
               <TfiLayoutGrid4 onClick={handleFour} size={28} />
             </Box>
           </Box>
-          <Box className={names} pr={10} pl={2}>
+          <SimpleGrid columns={names=="women_two"?[1,1,2,2,2]:[1,2,3,4,4]} pr={10} pl={2}>
             {kids &&
               kids.map((el, i) => (
                 <Link to={`/singleproduct/${el._id}`}>
@@ -449,7 +572,7 @@ const Kids = () => {
                   </Box>
                 </Link>
               ))}
-          </Box>
+          </SimpleGrid>
         </Box>
       </Box>
     </>
