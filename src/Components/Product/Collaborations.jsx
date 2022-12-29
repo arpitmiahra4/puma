@@ -12,7 +12,7 @@ const Collaborations = () => {
         h={530}
         textAlign="center"
       >
-        <Box w={"40%"} ml="65%" pt={"10%"} h={500}>
+        <Box w={"40%"} ml="65%" pt={"10%"} h={500} border={"2px solid red"}>
           <Text fontWeight={"bolder"} fontSize={40} color={"black"}>
             ART IN ACTION
           </Text>

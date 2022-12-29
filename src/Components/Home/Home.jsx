@@ -1,10 +1,13 @@
-import { Box, Button, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Text, useMediaQuery } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Home.module.css";
 import Carousel2 from "./second";
 import Carousel3 from "./third";
 import Carousel1 from "./TopTrending";
 const Home = () => {
+  const [arpit ] = useMediaQuery('(min-width: 800px)');
+  console.log(arpit);
+  console.log(window.innerWidth);
   return (
     <Box className={styles.main_home}>
       <Box
@@ -48,7 +51,7 @@ const Home = () => {
         </Box>
       </Box>
       {/* Carousel 1 TOP & TRENDINGS*/}
-      <Carousel1 />
+      {/* <Carousel1 /> */}
       {/* clip */}
       <Box className={styles.clip_box}>
         <video style={{ width: "100%" }} autoPlay muted loop>
@@ -133,7 +136,7 @@ const Home = () => {
         <Image src="https://i.ibb.co/kS60xhD/Screenshot-20221223-200320.png" />
       </Box>
       <Box mt={5} mb={5}>
-        <Carousel2 />
+        {/* <Carousel2 /> */}
       </Box>
       <Box
         mt={2}
@@ -180,7 +183,7 @@ const Home = () => {
         />
       </Box>
       <Box mt={2} mb={2}>
-        <Carousel3 />
+        {/* <Carousel3 /> */}
       </Box>
       <Box>
         <Image src="https://i.ibb.co/YXFhK38/Screenshot-20221223-213347.png" />

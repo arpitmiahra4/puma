@@ -12,6 +12,7 @@ import {
   MenuList,
   Select,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -23,6 +24,9 @@ import { dataUrl } from "../../URL/AllUrl";
 import MetaData from "../Home/MetaData";
 import "./women.css";
 const Women = () => {
+  const [arpit ] = useMediaQuery('(min-width: 800px)');
+  console.log(arpit);
+  console.log(window.innerWidth);
   const [women, setWomen] = useState([]);
   useEffect(() => {
     axios(`${dataUrl}/products?category=women`)
