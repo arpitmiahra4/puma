@@ -4,14 +4,32 @@
     background-size: cover;
     cursor: pointer;
   }
+  .first_box2 {
+    background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/53c926779e550792a4f2796c9640d38d3f4b784b-1536x1536.jpg?w=540&q=75&auto=format");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
   .second_box {
     background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/cf8a9c4ce55b7782a1bf4888b73a6f3482e0ee49-1440x500.jpg?w=1440&q=75&auto=format");
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
   }
+  .second_box2 {
+    background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/c1155ce8434b332f3f807d09b78b89577e97b597-1536x1536.jpg?w=540&q=75&auto=format");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
   .third_box {
     background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/f90a9b7fcc90bc010875fc95bba53157afddad87-1440x519.jpg?w=1440&q=75&auto=format");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .third_box2 {
+    background-image: url("https://cdn.sanity.io/images/qa41whrn/prod/2b9d5e221477366acfdba9c269e7b9d271929158-1536x1536.jpg?w=540&q=75&auto=format");
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;

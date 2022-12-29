@@ -30,7 +30,7 @@ const Home = () => {
       {/* second box */}
       <Box
         className={styles.second_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={520}
       >
         <Box pt={"10%"} pl={"60%"}>
@@ -60,7 +60,7 @@ const Home = () => {
             type="video/mp4"
           />
         </video>
-        <Box w={"30%"} mt="-200px" h={200} ml={"60%"}>
+        <Box w={"30%"} mt="-200px" h={200} ml={"60%"} >
           <Text color={"white"} fontWeight={"bolder"} fontSize={40}>
             GET YOUR
           </Text>
@@ -74,11 +74,11 @@ const Home = () => {
       </Box>
       <Box
         className={styles.third_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={530}
         mt={530}
       >
-        <Box w={550} ml="500px" pt={200} mt="-550" h={500}>
+        <Box w={"45%"} ml={["28%","40%","50%","38%","28%"]} pt={200} mt="-550" h={500}>
           <Text fontWeight={"bolder"} fontSize={50} color={"white"}>
             PARTY MODE
           </Text>
@@ -92,7 +92,7 @@ const Home = () => {
       </Box>
       <Box
         className={styles.forth_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={530}
       >
         <Box w={550} pt={200} h={500} textAlign="start" ml={"50px"}>
@@ -113,7 +113,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.five_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={530}
         pt={"100px"}
       >
@@ -141,7 +141,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.six_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={530}
         pt={"200px"}
       >
@@ -160,7 +160,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.seven_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={530}
         pt={"200px"}
       >
@@ -183,7 +183,7 @@ const Home = () => {
         />
       </Box>
       <Box mt={2} mb={2}>
-        {/* <Carousel3 /> */}
+       {/*  <Carousel3 /> */}
       </Box>
       <Box>
         <Image src="https://i.ibb.co/YXFhK38/Screenshot-20221223-213347.png" />
@@ -191,7 +191,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.eight_box}
-        w="100%"
+        w={["50%", "80%", "100%", null, null]}
         h={530}
         pt={"200px"}
       >
