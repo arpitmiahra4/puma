@@ -12,7 +12,7 @@ const Home = () => {
     <Box className={styles.main_home}>
       <Box
         className={styles.first_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
       >
         <Box w={"40%"} ml="55%" pt={"10%"} h={500}>
@@ -30,7 +30,7 @@ const Home = () => {
       {/* second box */}
       <Box
         className={styles.second_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={520}
       >
         <Box pt={"10%"} pl={"60%"}>
@@ -74,7 +74,7 @@ const Home = () => {
       </Box>
       <Box
         className={styles.third_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
         mt={530}
       >
@@ -92,7 +92,7 @@ const Home = () => {
       </Box>
       <Box
         className={styles.forth_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
       >
         <Box w={550} pt={200} h={500} textAlign="start" ml={"50px"}>
@@ -113,7 +113,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.five_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
         pt={"100px"}
       >
@@ -141,7 +141,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.six_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
         pt={"200px"}
       >
@@ -160,7 +160,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.seven_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
         pt={"200px"}
       >
@@ -191,7 +191,7 @@ const Home = () => {
       <Box
         mt={2}
         className={styles.eight_box}
-        w={["50%", "80%", "100%", null, null]}
+        w="100%"
         h={530}
         pt={"200px"}
       >

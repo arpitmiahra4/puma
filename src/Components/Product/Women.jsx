@@ -11,6 +11,7 @@ import {
   MenuItem,
   MenuList,
   Select,
+  SimpleGrid,
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -53,7 +54,7 @@ const Women = () => {
           </Text>
           <Divider />
           <hr />
-          <Flex
+        { arpit &&  <Flex
             gap={2}
             borderTop="2px solid black"
             borderBottom="2px solid black"
@@ -479,7 +480,12 @@ const Women = () => {
                 <option value="option3">Newest</option>
               </Select>
             </Box>
-          </Flex>
+          </Flex> }
+          {!arpit && <Flex gap={"2%"}>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            </Flex>}
           <Divider />
           <hr />
         </Box>
@@ -500,7 +506,7 @@ const Women = () => {
               <TfiLayoutGrid4 onClick={handleFour} size={28} />
             </Box>
           </Box>
-          <Box className={names} pr={10} pl={2}>
+          <SimpleGrid columns={names=="women_two"?[1,1,2,2,2]:[1,2,3,4,4]} pr={10} pl={2}>
             {women &&
               women.map((el, i) => (
                 <Link to={`/singleproduct/${el._id}`}>
@@ -543,7 +549,7 @@ const Women = () => {
                   </Box>
                 </Link>
               ))}
-          </Box>
+          </SimpleGrid>
         </Box>
       </Box>
     </>
