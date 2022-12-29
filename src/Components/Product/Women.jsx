@@ -67,7 +67,7 @@ const Women = () => {
             pb={2}
             pr={2}
           >
-            <Flex gap={2}>
+            <Flex gap={["2%",null,null,"5%",null]}>
             <Box>
               <Menu closeOnSelect={false}>
                 <MenuButton
@@ -203,7 +203,7 @@ const Women = () => {
                 </MenuList>
               </Menu>
             </Box>
-            <Box>
+           {/*  <Box>
               <Menu closeOnSelect={false}>
                 <MenuButton
                   as={Button}
@@ -247,7 +247,52 @@ const Women = () => {
                   </MenuItem>
                 </MenuList>
               </Menu>
-            </Box>
+            </Box> */}
+           {/*  <Box>
+              <Menu closeOnSelect={false}>
+                <MenuButton
+                  as={Button}
+                  border={"2px solid black"}
+                  bg="transparent"
+                  _hover={{ backGround: "transparent" }}
+                  fontWeight={"bold"}
+                  fontSize={16}
+                  rightIcon={<TriangleDownIcon />}
+                >
+                  Gender
+                </MenuButton>
+                <MenuList>
+                  <CloseIcon
+                    ml={"85%"}
+                    border="2px solid gray"
+                    w={"10%"}
+                    p={0.5}
+                    h="20px"
+                  />
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Footwear [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Apparel [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                  <MenuItem minH="30px" bg={"transparent"}>
+                    <Checkbox>
+                      <Text ml={5} fontSize={18}>
+                        Accessories [..]
+                      </Text>
+                    </Checkbox>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box> */}
             <Box>
               <Menu closeOnSelect={false}>
                 <MenuButton
@@ -338,54 +383,10 @@ const Women = () => {
                 </MenuList>
               </Menu>
             </Box>
-            <Box>
-              <Menu closeOnSelect={false}>
-                <MenuButton
-                  as={Button}
-                  border={"2px solid black"}
-                  bg="transparent"
-                  _hover={{ backGround: "transparent" }}
-                  fontWeight={"bold"}
-                  fontSize={16}
-                  rightIcon={<TriangleDownIcon />}
-                >
-                  Discount
-                </MenuButton>
-                <MenuList>
-                  <CloseIcon
-                    ml={"85%"}
-                    border="2px solid gray"
-                    w={"10%"}
-                    p={0.5}
-                    h="20px"
-                  />
-                  <MenuItem minH="30px" bg={"transparent"}>
-                    <Checkbox>
-                      <Text ml={5} fontSize={18}>
-                        Footwear [..]
-                      </Text>
-                    </Checkbox>
-                  </MenuItem>
-                  <MenuItem minH="30px" bg={"transparent"}>
-                    <Checkbox>
-                      <Text ml={5} fontSize={18}>
-                        Apparel [..]
-                      </Text>
-                    </Checkbox>
-                  </MenuItem>
-                  <MenuItem minH="30px" bg={"transparent"}>
-                    <Checkbox>
-                      <Text ml={5} fontSize={18}>
-                        Accessories [..]
-                      </Text>
-                    </Checkbox>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-            </Box>
+            
             </Flex>
             <Spacer/>
-            <Box >
+            <Box w="150px" >
               <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
                 <option value="option1">Discount High To Low</option>
                 <option value="option2">Best Matches</option>
@@ -406,8 +407,9 @@ const Women = () => {
             pt={2}
             pb={2}
             pr={2}
+            direction={["column","row",null,null,null]}
           >
-            <Flex gap={2}>
+            <Flex gap="5%">
             <Box>
               <Menu closeOnSelect={false}>
                 <MenuButton
@@ -500,7 +502,7 @@ const Women = () => {
             </Box>
             </Flex>
             <Spacer/>
-            <Box >
+            <Box w="130px" >
               <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
                 <option value="option1">Discount High To Low</option>
                 <option value="option2">Best Matches</option>
