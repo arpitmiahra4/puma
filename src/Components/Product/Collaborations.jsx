@@ -14,7 +14,7 @@ const Collaborations = () => {
         h={530}
         textAlign="center"
       >
-        <Box display={["none","block",null,null,null]} w="40%" ml={["10%","50%","55%","60%","60%"]} pt={"10%"} h={500} >
+        <Box display={["none","block",null,null,null]} w="40%" ml={["10%","50%","55%","60%","60%"]} border="1px solid red" pt={["40%","30%","20%","15%","10%"]} h={500} >
           <Text fontWeight={"bolder"} fontSize={40} color={"black"}>
             ART IN ACTION
           </Text>
