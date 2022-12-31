@@ -26,7 +26,7 @@ import { dataUrl } from "../../URL/AllUrl";
 import MetaData from "../Home/MetaData";
 import "./women.css";
 const Outlet = () => {
-  const {mediumScreen} = useMedia()
+  const {mediumScreen,smallScreen} = useMedia()
   const [outlet, setOutlet] = useState([]);
   useEffect(() => {
     axios(`${dataUrl}/products?category=outlet`)
@@ -535,7 +535,7 @@ const Outlet = () => {
               outlet.map((el, i) => (
                 <Link to={`/singleproduct/${el._id}`}>
                   <Box mt={10} mb="5px" ml={5} key={i}>
-                    <Image src={el.image} alt="error" w={"100%"} h="350" />
+                    <Image src={el.image} alt="error" w={"100%"} h={names=="women_two" && !smallScreen ? "350" : names=="women_two" ? "700px" : "350"} />
                     <Box
                       style={{
                         backgroundColor: "white",
