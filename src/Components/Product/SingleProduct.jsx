@@ -3,9 +3,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { BiHeart, BiRevision } from 'react-icons/bi';
 import { useParams } from 'react-router-dom'
+import { useMedia } from '../../MediaQuery/UseMedia';
 import { dataUrl } from '../../URL/AllUrl';
 import "./women.css"
 const SingleProduct = () => {
+  const {mediumScreen} = useMedia()
   const params = useParams();
   console.log(params);
   const [data, setData] = useState([]);
@@ -19,16 +21,16 @@ const SingleProduct = () => {
     <Box w={"100%"} pl={5} pr={5} >
       <Text>Home 🔹 Women</Text>
       {data && data.map((el, i) => (
-        <Flex key={i} w={"100%"} mt={"5%"}>
-          <Box w={"70%"}>
+        <Flex flexDirection={["column","column","column","row","row"]} key={i} w={"100%"} mt={"5%"}>
+          <Box w={["100%","100%","100%","70%","70%"]} mb="80px">
             <Image src={el.images[0].image} w={"100%"} />
-            <Box className='grid_images' mt={2} w={"100%"}>
+           {mediumScreen && <Box className='grid_images' mt={2} w={"100%"}>
               {el.images && el.images.map((item, i) => (
                 <Image src={item.image} key={i} h={"100%"} />
               ))}
-            </Box>
+            </Box>}
           </Box>
-          <Box w={"40%"} pl="2%">
+          <Box w={["100%","100%","100%","40%","40%"]} pl="2%">
             <Text fontWeight={"bolder"} fontSize={35}>{el.title}</Text>
             <Text color={"#ba2b25"} mt="5" fontWeight={"bolder"} fontSize={27}>{`₹${el.price}`}</Text>
             <Text fontWeight={"bolder"} style={{ textDecoration: "line-through" }} fontSize={16}>{`₹${el.actual_price}`}</Text>
@@ -84,8 +86,8 @@ const SingleProduct = () => {
       <Box bg="#f3f3f3" mb={10} mt={60} p={[10, 10, 10, 10]}>
         <Text fontWeight={"bold"} fontSize={22}>PRODUCT STORY</Text>
         <Text mt={2}>Comfort is the name of the game with these stylish running shoes. Lightweight and well-cushioned, they're the perfect training companion.</Text>
-        <Flex w={"80%"} mt={10}>
-          <Box w={"60%"}>
+        <Flex flexDirection={["column","column","row","row","row"]} w={"80%"} mt={10}>
+          <Box w={["120%","80%","60%",null,null]}>
             <Text fontWeight={"bold"} fontSize={22}>DETAILS</Text>
             <Text fontSize={18} >🔹 Low boot</Text>
             <Text fontSize={18} mt={2}>🔹 Fashionable upper design</Text>
@@ -108,14 +110,14 @@ const SingleProduct = () => {
         <Text fontWeight={"bold"} fontSize={22}>Country Of Origin</Text>
         <Text mt={5}>VN</Text>
       </Box>
-      <Flex mb={10} w={"50%"} align="center" p={[10, 10, 10, 10]}>
-        <Box textAlign={"center"} w="50%">
+      <Flex flexDirection={["column","row","row","row","row"]} mb={10} w={["100%","100%","70%","60%","50%"]} align="center" p={[10, 10, 10, 10]}>
+        <Box textAlign={"center"} w={[,"100%","50%",null,null,null]}>
           <Text fontSize={25}>AS WORN BY YOU</Text>
           <Text fontSize={13}>Mention us on Instagram<br />@pumaindia</Text>
           <Text fontSize={15}>"// ADD YOUR PHOTO //"</Text>
         </Box>
-        <Box border={"2px solid gray"} w="40%" h={"250px"}>
-          <Text pt={"100px"} pl="60px">ADD YOUR PHOTO</Text>
+        <Box textAlign={"center"} border={"2px solid gray"} w={[,"100%","40%",null,null,null]} h={"250px"}>
+          <Text pt={"100px"} >ADD YOUR PHOTO</Text>
         </Box>
       </Flex>
     </Box>
