@@ -27,7 +27,7 @@ import MetaData from "../Home/MetaData";
 import "./women.css";
 
 const Kids = () => {
-  const {mediumScreen} = useMedia()
+  const {mediumScreen,smallScreen} = useMedia()
   const [kids, setKids] = useState([]);
 
   useEffect(() => {
@@ -385,7 +385,7 @@ const Kids = () => {
             </Flex>
             <Spacer/>
             <Box w="150px" >
-              <Select fontWeight={"bold"} placeholder="Sort by" w={"92%"}>
+              <Select fontWeight={"bold"} placeholder="Sort by"  >
                 <option value="option1">Discount High To Low</option>
                 <option value="option2">Best Matches</option>
                 <option value="option3">Top sellers</option>
@@ -536,7 +536,7 @@ const Kids = () => {
               kids.map((el, i) => (
                 <Link to={`/singleproduct/${el._id}`}>
                   <Box mt={10} mb="5px" ml={5} key={i}>
-                    <Image src={el.image} alt="error" w={"100%"} h="350" />
+                    <Image src={el.image} alt="error" w={"100%"} h={names=="women_two" && !smallScreen ? "350" : names=="women_two" ? "700px" : "350"} />
                     <Box
                       style={{
                         backgroundColor: "white",
